@@ -63,3 +63,25 @@ python quiz_game.py
 - quiz_game.py: Main game logic
 - database.py: Database operations
 - Questions.txt: Question bank
+
+## To-Do
+
+### Core Features
+
+- [ ] Integrate OpenTDB API for questions
+- [ ] Add colorful terminal output
+- [ ] Implement hint system
+- [ ] Add timer for questions
+
+### Improvements
+
+- [ ] Add player statistics dashboard
+- [ ] Create simple leaderboard view
+- [ ] Save question history
+- [ ] Add configuration file
+
+### Nice to Have
+
+- [ ] Basic sound effects
+- [ ] Multiple choice questions
+- [ ] Simple GUI version
