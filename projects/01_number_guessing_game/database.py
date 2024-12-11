@@ -38,10 +38,6 @@ def get_top_scores(difficulty_name):
 
 
 
-
-
-
-
 # Test connection
 if __name__ == "__main__":
     try:

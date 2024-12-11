@@ -1,0 +1,74 @@
+Q: What is the capital of France?
+A: paris
+T: Geography
+D: easy
+
+Q: What is the largest planet in our solar system?
+A: jupiter
+T: Science
+D: easy
+
+Q: What programming language was created by Guido van Rossum?
+A: python
+T: Technology
+D: easy
+
+Q: Which gas do plants absorb from the atmosphere?
+A: carbon dioxide
+T: Science
+D: easy
+
+Q: What is the capital of Japan?
+A: tokyo
+T: Geography
+D: easy
+
+Q: What is the chemical symbol for gold?
+A: au
+T: Science
+D: medium
+
+Q: Which data structure in Python is immutable and ordered?
+A: tuple
+T: Technology
+D: medium
+
+Q: What is the deepest ocean on Earth?
+A: pacific ocean
+T: Geography
+D: medium
+
+Q: What is the most abundant element in the Earth's atmosphere?
+A: nitrogen
+T: Science
+D: medium
+
+Q: Which continent is the largest by land area?
+A: asia
+T: Geography
+D: medium
+
+Q: What is the process by which plants make their own food?
+A: photosynthesis
+T: Science
+D: hard
+
+Q: What is the time complexity of binary search?
+A: log n
+T: Technology
+D: hard
+
+Q: What is the capital of Mongolia?
+A: ulaanbaatar
+T: Geography
+D: hard
+
+Q: Which programming paradigm does Python primarily support?
+A: object oriented programming
+T: Technology
+D: hard
+
+Q: What is the smallest prime number greater than 100?
+A: 101
+T: Mathematics
+D: hard
