@@ -48,7 +48,7 @@ CREATE TABLE scores (
 4. Run the game:
 
 ```
-bashCopypython quiz_game.py
+python quiz_game.py
 ```
 
 ## How to Play
