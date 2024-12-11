@@ -41,14 +41,14 @@ CREATE TABLE scores (
     hard_score INT DEFAULT 0,
     played_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
 
 3. Configure database connection in database.py
 
 4. Run the game:
+
 ```
-
 bashCopypython quiz_game.py
-
 ```
 
 ## How to Play
@@ -63,5 +63,3 @@ bashCopypython quiz_game.py
 - quiz_game.py: Main game logic
 - database.py: Database operations
 - Questions.txt: Question bank
-
-```
