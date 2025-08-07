@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-#includes ability to parse html, it can follow docment tree structure
+#includes ability to parse html, it can follow document tree structure
 import csv
 # a csv file is essentialy a file with a very specific delimiter( , ), custom headers, to make rows in right format 
 import re
@@ -64,10 +64,10 @@ def extract_dates(dates_tag):
     if dates_tag:
         dates_text = dates_tag.get_text().strip()
         # 3 Jul 1896 - 29 Dec 1964
-        birth_date, death_date = map(str.strip, dates_text.split('-'))
+        birth_date, death_date = map(str.strip, dates_text.split('–'))
         
-    birth = parse_date(birth_date) if birth_date else {"day": None, "month": None, "year": None}
-    death = parse_date(death_date) if death_date else  {"day": None, "month": None, "year": None}
+    birth = parse_date(birth_date) if birth_date else {"day": None, "month": None, "year": "unknown"}
+    death = parse_date(death_date) if death_date else  {"day": None, "month": None, "year": "unknown"}
     return birth, death
     
 def extract_grave_location(location_tag):
@@ -75,7 +75,7 @@ def extract_grave_location(location_tag):
         location_text = location_tag.find('strong').get_text().strip() if location_tag.find('strong') else ""
         section_match = re.search(r"(?:Sec(?:tion)?\s+)?([A-Za-z]+)", location_text, re.IGNORECASE)
         lot_match = re.search(r"(\d+)", location_text, re.IGNORECASE)
-        section = section_match.group().split()[-1].upper()
+        section = section_match.group().split()[-1].upper() if section_match else ''
         lot = int(lot_match.group()) if lot_match else ''
         return {"Section": section, "Lot": lot}
     return {"Section": None, "Lot": None}
@@ -97,7 +97,7 @@ with open('gv_50.html', 'r', encoding='utf-8') as HTML_file:
         name_tag = memorial.find('i', class_= "pe-2")
         veteran_tag = memorial.find('span', title="Veteran")
         dates_tag = memorial.find('b', class_="birthDeathDates fw-light fs-5 text-body")
-        location_tag = memorial.find('p', class_="addr-cemet mb-1") 
+        location_tag = memorial.find('p', class_="addr-cemet mb-1")
 
         # call functions and extract information
         name_details = extract_name_details(name_url, name_tag)
@@ -124,7 +124,7 @@ with open('gv_50.html', 'r', encoding='utf-8') as HTML_file:
 with open('parsed_names.csv', 'w', newline='', encoding ="utf-16") as csv_file:
     #encoding utf-16 instead utf-8 because it gives more bytes(people with characters in the standard character set, like Korean, Japanese, emojis etc.)
 
-    fieldnames = ['Memorial Id', 'Prefix', 'First Name', 'Middle Name', 'Maiden Name', 'Last Name', 'Suffix', 'Veteran', 'Birth Day', 'Birth Month', 'Birth Year', 'Death Day', 'Death Month', 'Death Year', 'Section', 'Lot']
+    fieldnames = ['Memorial ID', 'Prefix', 'First Name', 'Middle Name', 'Maiden Name', 'Last Name', 'Suffix', 'Veteran', 'Birth Day', 'Birth Month', 'Birth Year', 'Death Day', 'Death Month', 'Death Year', 'Section', 'Lot']
 
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
